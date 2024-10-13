@@ -137,6 +137,9 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.174533
 script = ExtResource("1_b10bi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -147,6 +150,8 @@ shape = SubResource("CircleShape2D_bev0c")
 position = Vector2(0, -21)
 texture = ExtResource("1_qisrs")
 hframes = 21
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
