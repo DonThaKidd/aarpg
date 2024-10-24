@@ -13,7 +13,7 @@ func _ready():
 	state_machine.Initialise(self)
 	pass
 
-func _process(delta):
+func _process( _delta ):
 	
 	## old direction code
 	# direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
