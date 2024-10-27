@@ -10,8 +10,6 @@ var attacking : bool = false
 @onready var idle : State_Idle = $"../Idle"
 @onready var attack_anim : AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
 @onready var audio : AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
-@onready var hurt_box: HurtBox = %AttackHurtBox
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,21 +27,13 @@ func Enter() -> void:
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(0.9, 1.1)
 	audio.play()
-	
-	
 	attacking = true
-	
-	await get_tree().create_timer( 0.075).timeout
-	hurt_box.monitoring = true
 	pass
 
 # what happens when the player enters this state.
 func Exit() -> void:
 	animation_player.animation_finished.disconnect( EndAttack )
-	
 	attacking = false
-	
-	hurt_box.monitoring = false
 	pass
 
 # what happens during the process update in this state?
