@@ -8,7 +8,7 @@
 size = Vector2(36, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydvqd"]
-size = Vector2(24, 16)
+size = Vector2(30, 18)
 
 [node name="Plant" type="Node2D"]
 position = Vector2(0, -9)
@@ -32,5 +32,5 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 18)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_ydvqd")
