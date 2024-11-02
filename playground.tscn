@@ -31,4 +31,3 @@ position = Vector2(195, 393)
 
 [node name="Slime" parent="." instance=ExtResource("4_wyjby")]
 position = Vector2(142, 224)
-hp = 3
