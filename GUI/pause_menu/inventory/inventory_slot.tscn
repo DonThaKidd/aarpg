@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk1id8f0gnfeh"]
+
+[ext_resource type="Texture2D" uid="uid://cmsrypl3pexn3" path="res://Items/Sprites/items.png" id="1_4s1mu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eofkj"]
+atlas = ExtResource("1_4s1mu")
+region = Rect2(0, 0, 32, 32)
+
+[node name="InventorySlot" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_eofkj")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 31.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 8
+text = "99
+"
+horizontal_alignment = 2

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_bj7fb"]
 [ext_resource type="PackedScene" uid="uid://bdmvxvs81aaqq" path="res://grass_01.tscn" id="1_by7j7"]
 [ext_resource type="PackedScene" uid="uid://b0en5eyoxv4b2" path="res://Levels/player_spawn.tscn" id="2_6ux1x"]
-[ext_resource type="PackedScene" uid="uid://dq5yegndwha4q" path="res://props/plants/plant.tscn" id="3_6ggf4"]
+[ext_resource type="PackedScene" uid="uid://dq5yegndwha4q" path="res://Props/plants/plant.tscn" id="3_6ggf4"]
 [ext_resource type="PackedScene" uid="uid://bj1av5k2g45rr" path="res://Levels/LevelTransition.tscn" id="4_1lon7"]
 
 [node name="01" type="Node2D"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dq5yegndwha4q"]
 
-[ext_resource type="Script" path="res://props/plants/plant.gd" id="1_cv2qs"]
-[ext_resource type="Texture2D" uid="uid://b4jmrcsoa34rx" path="res://props/plants/Props.png" id="1_hugx7"]
+[ext_resource type="Script" path="res://Props/plants/plant.gd" id="1_cv2qs"]
+[ext_resource type="Texture2D" uid="uid://b4jmrcsoa34rx" path="res://Props/plants/Props.png" id="1_hugx7"]
 [ext_resource type="PackedScene" uid="uid://lwo1flnexqpw" path="res://General Nodes/Hitbox/HitBox.tscn" id="2_axwmm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvlao"]
