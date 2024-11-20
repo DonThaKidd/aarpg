@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=8 format=3 uid="uid://b1y4ypq7i2ien"]
+
+[ext_resource type="Script" path="res://Items/item_effects/item_effect.gd" id="1_buxd4"]
+[ext_resource type="Script" path="res://Items/item_effects/item_effect_heal.gd" id="2_ghfiu"]
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="2_xfpc1"]
+[ext_resource type="AudioStream" uid="uid://bd8p47t38pjla" path="res://Items/item_pickup/item_pickup.wav" id="3_wqddh"]
+[ext_resource type="Texture2D" uid="uid://cmsrypl3pexn3" path="res://Items/Sprites/items.png" id="5_6haua"]
+
+[sub_resource type="Resource" id="Resource_unkx3"]
+script = ExtResource("2_ghfiu")
+heal_amount = 1
+sound = ExtResource("3_wqddh")
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wsc6"]
+atlas = ExtResource("5_6haua")
+region = Rect2(192, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_xfpc1")
+name = ""
+description = ""
+texture = SubResource("AtlasTexture_7wsc6")
+effects = Array[ExtResource("1_buxd4")]([SubResource("Resource_unkx3")])

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk1id8f0gnfeh"]
+[gd_scene load_steps=4 format=3 uid="uid://dk1id8f0gnfeh"]
 
 [ext_resource type="Texture2D" uid="uid://cmsrypl3pexn3" path="res://Items/Sprites/items.png" id="1_4s1mu"]
+[ext_resource type="Script" path="res://GUI/pause_menu/inventory/scripts/inventory_slot_ui.gd" id="1_apk3m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eofkj"]
 atlas = ExtResource("1_4s1mu")
@@ -10,6 +11,7 @@ region = Rect2(0, 0, 32, 32)
 custom_minimum_size = Vector2(32, 32)
 offset_right = 32.0
 offset_bottom = 32.0
+script = ExtResource("1_apk3m")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
