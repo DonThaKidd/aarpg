@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dxdtotar8rjam"]
+[gd_scene load_steps=38 format=3 uid="uid://dxdtotar8rjam"]
 
 [ext_resource type="Texture2D" uid="uid://dogmlqsg18kty" path="res://Player/Sprites/Shadow.png" id="1_b5h02"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Enemy.gd" id="1_m4urv"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://b3e10013qnuo4" path="res://General Nodes/HurtBox/Hurt_box.tscn" id="10_oja0u"]
 [ext_resource type="Texture2D" uid="uid://c4o4lmo2luymy" path="res://Enemies/Slimes/DestroySmoke.png" id="11_kqdm3"]
 [ext_resource type="Script" path="res://Enemies/Scripts/states/enemy_state_destroy.gd" id="12_qmtdc"]
+[ext_resource type="Script" path="res://Enemies/Scripts/drop_data.gd" id="13_cq8rs"]
+[ext_resource type="Resource" uid="uid://bt4j2865c5qds" path="res://Items/gem.tres" id="14_sfuby"]
+[ext_resource type="Resource" uid="uid://b1y4ypq7i2ien" path="res://Items/apple.tres" id="15_smq2j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1qoc7"]
 radius = 13.0
@@ -54,6 +57,18 @@ tracks/2/path = NodePath("Sprite2D:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DestroyEffectSprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -139,6 +154,18 @@ tracks/5/keys = {
 "clips": PackedStringArray("destroy"),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DestroyEffectSprite:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_5ftid"]
 resource_name = "destroy_side"
@@ -219,6 +246,18 @@ tracks/5/keys = {
 "clips": PackedStringArray("destroy"),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DestroyEffectSprite:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ljqqs"]
 resource_name = "destroy_up"
@@ -298,6 +337,18 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "clips": PackedStringArray("destroy"),
 "times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DestroyEffectSprite:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_cnchh"]
@@ -695,6 +746,20 @@ _data = {
 "walk_up": SubResource("Animation_31wek")
 }
 
+[sub_resource type="Resource" id="Resource_ur3va"]
+script = ExtResource("13_cq8rs")
+item = ExtResource("14_sfuby")
+probability = 100.0
+min_amount = 1
+max_amount = 4
+
+[sub_resource type="Resource" id="Resource_uuktg"]
+script = ExtResource("13_cq8rs")
+item = ExtResource("15_smq2j")
+probability = 100.0
+min_amount = 1
+max_amount = 4
+
 [sub_resource type="Animation" id="Animation_f0kwq"]
 length = 0.001
 tracks/0/type = "value"
@@ -813,6 +878,7 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("12_qmtdc")
+drops = Array[ExtResource("13_cq8rs")]([SubResource("Resource_ur3va"), SubResource("Resource_uuktg")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
