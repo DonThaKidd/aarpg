@@ -47,8 +47,10 @@ func slot_changed() -> void:
 func get_save_data() -> Array:
 	var item_save : Array = []
 	for i in slots.size():
-		item_save.append('')
+		item_save.append( item_to_save( slots[ i ] ) )
 	return item_save
+
+
 
 ## Convert each inventory item into a dictionary
 func item_to_save( slot : SlotData ) -> Dictionary:
@@ -79,5 +81,4 @@ func item_from_save( save_object : Dictionary ) -> SlotData:
 	new_slot.item_data = load( save_object.item )
 	new_slot.quantity = int( save_object.quantity )
 	return new_slot
-	
 	pass
