@@ -753,12 +753,12 @@ probability = 100.0
 min_amount = 1
 max_amount = 4
 
-[sub_resource type="Resource" id="Resource_uuktg"]
+[sub_resource type="Resource" id="Resource_1fi5v"]
 script = ExtResource("13_cq8rs")
 item = ExtResource("15_smq2j")
-probability = 100.0
+probability = 33.0
 min_amount = 1
-max_amount = 4
+max_amount = 1
 
 [sub_resource type="Animation" id="Animation_f0kwq"]
 length = 0.001
@@ -878,7 +878,7 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("12_qmtdc")
-drops = Array[ExtResource("13_cq8rs")]([SubResource("Resource_ur3va"), SubResource("Resource_uuktg")])
+drops = Array[ExtResource("13_cq8rs")]([SubResource("Resource_ur3va"), SubResource("Resource_1fi5v")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4

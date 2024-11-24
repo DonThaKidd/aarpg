@@ -33,6 +33,7 @@ func Enter() -> void:
 	enemy.update_animation( anim_name )
 	enemy.animation_player.animation_finished.connect( _on_animation_finished )
 	disable_hurt_box()
+	drop_items()
 	pass
 
 # what happens when the player enters this state.
@@ -74,5 +75,6 @@ func drop_items() -> void:
 			var drop : ItemPickup = PICKUP.instantiate() as ItemPickup
 			drop.item_data = drops[i].item
 			enemy.get_parent().call_deferred( "add_child", drop )
-			drop.global_position = enemy.global_position + Vector2(randf() * 16, randf() * 16 )
+			drop.global_position = enemy.global_position
+			drop.velocity = enemy.velocity.rotated( randf_range( -1.5, 1.5 ) ) * randf_range( 0.9 , 1.5 )
 	pass
